@@ -1,6 +1,6 @@
 {
   "name": "my-site",
-  "homepage": "https://<github-username>.github.io/<project-repo>",
+  "homepage": "https://shashankmurching.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
-    "deploy" : "npm run build&&gh-pages -d build"
+    "deploy" : "npm run build&&gh-pages -b master -d build"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0"
