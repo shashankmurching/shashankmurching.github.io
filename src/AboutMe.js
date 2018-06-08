@@ -9,7 +9,7 @@ class AboutMe extends React.Component {
 	        <p className="App-intro"> 
 	        	Hi,
 	     		I'm Shashank Murching. I'm a rising Junior at the University of Michigan, majoring in Computer Science.
-	     		[Add more here..]
+	     		[Add more information here..]
 	        </p>
 	    </div>
     );
