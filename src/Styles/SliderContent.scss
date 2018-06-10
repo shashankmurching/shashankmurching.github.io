@@ -1,6 +1,8 @@
 @import '_globals.scss';
 
-.AboutMe {
+.container {
 	background-color: $md-deep-purple-50;
+	display: flex;
+	flex-direction: column;
 
 }

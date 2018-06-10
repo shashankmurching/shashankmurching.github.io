@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from 'react-md';
 
-class Slider extends React.Component {
+class SlideSelector extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,7 +22,7 @@ class Slider extends React.Component {
   	return (
       <div>
         {this.state.buttons.map((name, id) => (
-          <Button key={id} raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
+          <Button key={id} primary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
            	{name} 
          	</Button>
         ))} 
@@ -31,4 +31,4 @@ class Slider extends React.Component {
   }
 }
 
-export default Slider;
+export default SlideSelector;
