@@ -1,8 +1,8 @@
 import React from 'react';
 
 import SlideSelector from './SlideSelector.js';
-import AboutMe from './AboutMe.js';
-import Projects from './Projects.js';
+import AboutMe from './SliderContent/AboutMe.js';
+import Projects from './SliderContent/Projects.js';
 import styled from 'styled-components';
 
 //import './Styles/SliderContent.css';
