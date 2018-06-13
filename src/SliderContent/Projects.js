@@ -3,9 +3,10 @@ import React from 'react';
 class Projects extends React.Component {
   render () {
     return (
-    	<h1 className="AboutMe">
-    		Projects
-	    </h1>
+    	<div>
+	    	<h1 > Projects</h1>
+		    <p> link to github projects? </p>
+		</div>
     );
   }
 }
