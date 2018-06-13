@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p start-js",
+    "start": "./node_modules/.bin/npm-run-all -p start-js",
     "build": "react-scripts build --include-path ./node_modules src/ -o src/",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
