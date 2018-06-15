@@ -5,7 +5,7 @@ class Projects extends React.Component {
     return (
     	<div>
 	    	<h1 > Projects</h1>
-		    <p> link to github projects? </p>
+		    <p> link to github projects? - add cards for each project</p>
 		</div>
     );
   }

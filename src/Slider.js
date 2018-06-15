@@ -58,7 +58,7 @@ class Slider extends React.Component {
     return (
     	<SliderContainer>
     		<SlideSelector selectedID={this.state.selectedID} onButtonSelect={this.handleButtonChange} slides={SlideTitles} />
-    	  <div> {this.contentSelector()} </div>
+    	    {this.contentSelector()}
 	    </SliderContainer>
     );
   }

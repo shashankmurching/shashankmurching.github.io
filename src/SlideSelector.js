@@ -28,10 +28,10 @@ class SlideSelector extends React.Component {
  	render () {
   	return (
       <SelectorCont>
-        {this.state.buttons.map((name, id) => (
-          <Button key={id} primary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
+        {this.state.buttons.map((name, id) => ( <span>
+        	<Button key={id} secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
            	{name} 
-         	</Button>
+        	</Button> &nbsp;&nbsp;</span>
         ))} 
       </SelectorCont>
   	);
