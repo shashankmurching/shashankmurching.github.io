@@ -1,18 +1,31 @@
 import React from 'react';
 import {Card, CardTitle, CardText} from 'react-md';
+import styled from 'styled-components';
+
+const CardCont = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 
 class AboutMe extends React.Component {
   render () {
     return (
-    	<div>
-			<h1 className="App-header"> About Me</h1>
-	        <div className="App-intro"> 
-	        	Hi,
-		     		I'm a rising Junior at the University of Michigan, majoring in Computer Science.
-		     		[Add more information here..]
-	        </div>
-	    </div>
+    	<CardCont >
+	        <Card>
+	        	<CardTitle title="About Me" subtitle="Overview"/>
+	        	<CardText>
+	        		<p>
+			        	Hi,
+				     		I'm a rising Junior at the University of Michigan, majoring in Computer Science.
+				     		[Add more information here..]
+	        		</p>
+	        	</CardText>
+	        </Card>
+	      </CardCont>
     );
   }
 }
