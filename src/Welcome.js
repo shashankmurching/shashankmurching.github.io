@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import './Styles/_globals.scss';
+import { Colors } from './Const.js';
+
 
 const WelcomeHeader = styled.h1`
 	height: 100px;
 	padding-top: 40px;
-	color: #009688;
+	color: ${Colors.primary};
 `;
 
 const WelcomeIntro = styled.p`
@@ -14,7 +15,7 @@ const WelcomeIntro = styled.p`
 `;
 
 
-class Welcome extends React.Component {
+export default class Welcome extends React.Component {
   render () {
     return (
     	<div>
@@ -28,5 +29,3 @@ class Welcome extends React.Component {
     );
   }
 }
-
-export default Welcome;

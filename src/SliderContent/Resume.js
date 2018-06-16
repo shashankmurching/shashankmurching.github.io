@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Resume extends React.Component {
+export default class Resume extends React.Component {
   render () {
     return (
     	<div>
@@ -10,5 +10,3 @@ class Resume extends React.Component {
     );
   }
 }
-
-export default Resume;

@@ -7,8 +7,7 @@ const SelectorCont = styled.div`
 `;
 
 
-
-class SlideSelector extends React.Component {
+export default class SlideSelector extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -28,14 +27,12 @@ class SlideSelector extends React.Component {
  	render () {
   	return (
       <SelectorCont>
-        {this.state.buttons.map((name, id) => ( <span>
-        	<Button key={id} secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
+        {this.state.buttons.map((name, id) => ( <span key={id}>&nbsp;
+        	<Button secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
            	{name} 
-        	</Button> &nbsp;&nbsp;</span>
+        	</Button>&nbsp;</span>
         ))} 
       </SelectorCont>
   	);
   }
 }
-
-export default SlideSelector;

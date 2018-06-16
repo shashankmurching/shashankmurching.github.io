@@ -1,24 +1,21 @@
 import React from 'react';
-
-import SlideSelector from './SlideSelector.js';
-import AboutMe from './SliderContent/AboutMe.js';
-import Projects from './SliderContent/Projects.js';
-import Resume from './SliderContent/Resume.js';
-import ConnectWithMe from './SliderContent/ConnectWithMe.js';
 import styled from 'styled-components';
+import SlideSelector from './SlideSelector.js';
+import { SlideTitles, SlideContent, Colors } from './Const.js';
 
-//import './Styles/SliderContent.css';
-
-const SlideTitles = ['About Me', 'Projects', 'Resume', 'Connect With Me!'];
-
-
-const SliderContainer = styled.div`
-  text-align: center;
-  height: 100%; 
+const ContentContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+`;
+const HeaderType = styled.h1`
+	color: ${Colors.primary};
 `;
 
-class Slider extends React.Component {
-
+export default class Slider extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -35,33 +32,18 @@ class Slider extends React.Component {
 	}
 
 	contentSelector() {
-		switch(this.state.selectedID) {
-			case 0:
-				return <AboutMe/>
-				break;
-			case 1:
-				return <Projects/>
-				break;
-			case 2:
-				return <Resume/>
-				break;
-			case 3:
-				return <ConnectWithMe/>
-				break;
-			default:
-				return <AboutMe/>
-		}
+		return <div> 	
+						<HeaderType> {SlideTitles[this.state.selectedID]} </HeaderType>
+						{SlideContent[this.state.selectedID]} 
+					</div>;
 	}
-
 
   render () {
     return (
-    	<SliderContainer>
+    	<div>
     		<SlideSelector selectedID={this.state.selectedID} onButtonSelect={this.handleButtonChange} slides={SlideTitles} />
-    	    {this.contentSelector()}
-	    </SliderContainer>
+    	  <ContentContainer> {this.contentSelector()} </ContentContainer>
+	    </div>
     );
   }
 }
-
-export default Slider;
