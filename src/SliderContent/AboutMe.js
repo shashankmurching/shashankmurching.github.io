@@ -1,20 +1,27 @@
 import React from 'react';
+
 import styled from 'styled-components';
+import Me from '../Assets/Images/Me.jpg';
+
+
+
+const ImageCont = styled.img`
+	float: left;
+`;
+
 
 export default class AboutMe extends React.Component {
   render () {
     return (
-			<div>
-				<h2 align="left"> Overview</h2>
-				<h4>
-					I'm a Junior at the University of Michigan, majoring in Computer Science
-					and minoring in Mathematics.
-					[Add more information here..] adfsdfasdfasdf adsf
-				</h4>
+			<div display="table-cell">
+				<ImageCont align="left" height="800" src={Me}/>
 
-				<h4>
-				suh
-				</h4>
+				<h2 align="center"> Interests</h2>
+				<p> doo doo doooo </p>
+
+
+				<h2 align="center"> Hobbies</h2>
+				<p> so many things </p>
 			</div>
     );
   }

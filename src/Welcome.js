@@ -9,7 +9,7 @@ const WelcomeHeader = styled.h1`
 	color: ${Colors.primary};
 `;
 
-const WelcomeIntro = styled.p`
+const WelcomeIntro = styled.h2`
 	font-size: large;
 	padding-bottom: 10px;
 `;
@@ -20,11 +20,10 @@ export default class Welcome extends React.Component {
     return (
     	<div>
     		<WelcomeHeader> Shashank Murching </WelcomeHeader>
-			<WelcomeHeader> Hey! Thanks For Stopping By My Site! :)</WelcomeHeader>
-	        <WelcomeIntro> 
-	        	This is a continuous work in progress.
-	         	But keep checking in for cool updates!
-	        </WelcomeIntro>
+    		<WelcomeIntro>
+					I'm a Junior at the University of Michigan - majoring in Computer Science
+					and minoring in Mathematics.
+    		</WelcomeIntro>
 	    </div>
     );
   }

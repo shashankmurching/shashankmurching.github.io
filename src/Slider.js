@@ -4,6 +4,7 @@ import SlideSelector from './SlideSelector.js';
 import { SlideTitles, SlideContent, Colors } from './Const.js';
 
 const ContentContainer = styled.div`
+	padding-top: 10px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -28,7 +29,7 @@ export default class Slider extends React.Component {
 		this.setState({
 			selectedID: id
 		});
-		console.log(id);
+		//console.log(id);
 	}
 
 	contentSelector() {
