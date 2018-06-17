@@ -14,7 +14,7 @@ export default class AboutMe extends React.Component {
   render () {
     return (
 			<div display="table-cell">
-				<ImageCont align="left" height="800" src={Me}/>
+				<ImageCont align="left" src={Me}/>
 
 				<h2 align="center"> Interests</h2>
 				<p> doo doo doooo </p>
