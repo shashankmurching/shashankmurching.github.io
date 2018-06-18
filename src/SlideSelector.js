@@ -3,7 +3,8 @@ import {Button} from 'react-md';
 import styled from 'styled-components';
 
 const SelectorCont = styled.div`
-	padding-bottom: 15px;
+	padding-bottom: 20px;
+	padding-top: 10px;
 `;
 
 
@@ -27,10 +28,10 @@ export default class SlideSelector extends React.Component {
  	render () {
   	return (
       <SelectorCont>
-        {this.state.buttons.map((name, id) => ( <span key={id}>&nbsp;
+        {this.state.buttons.map((name, id) => ( <span key={id}>&nbsp;&nbsp;
         	<Button secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
            	{name} 
-        	</Button>&nbsp;</span>
+        	</Button>&nbsp;&nbsp;</span>
         ))} 
       </SelectorCont>
   	);
