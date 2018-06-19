@@ -15,14 +15,33 @@ const WelcomeIntro = styled.h2`
 	overflow: auto;
 `;
 
+const InterestsList = styled.ul`
+  list-style-type: none;
+  font-size: medium;
+`;
+
+
 export default class AboutMe extends React.Component {
 
-	interests() {
-		return <p> Get a list going </p>;
+	techInterests() {
+		const tech_interests = ["Web Development", "IoT Devices", "Open Source"];
+		const listInterests = tech_interests.map((interest) =>
+			<li>{interest}</li>);
+
+
+		return <InterestsList> 
+						{listInterests}
+					</InterestsList>;
 	}
 
-	hobbies() {
-		return <p> Hii </p>;
+	otherInterests() {
+		const other_interests = ["Music", "Coffee Shops", "Animal Fun Facts"];
+		const listInterests = other_interests.map((interest) =>
+			<li>{interest}</li>);
+
+		return <InterestsList> 
+						{listInterests}
+					</InterestsList>;
 	}
 
   render () {
@@ -36,9 +55,9 @@ export default class AboutMe extends React.Component {
 				<div>
 					<ImageCont src={Me}/>
 					<h2> Interests </h2>
-					{this.interests()}
-					<h2> Hobbies </h2>
-					{this.hobbies()}
+					{this.techInterests()}
+					<h2> Non-Tech Interests </h2>
+					{this.otherInterests()}
 				</div>
 			</div>
     );

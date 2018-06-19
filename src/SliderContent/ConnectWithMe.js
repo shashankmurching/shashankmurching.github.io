@@ -4,6 +4,9 @@ import styled, {keyframes} from 'styled-components';
 import * as vinyl from '../Assets/SVG/vinyl.svg';
 import * as Github from '../Assets/SVG/Github.svg';
 
+import { Colors } from '../Const';
+
+
 const rotate360 = keyframes`
   from {
     transform: rotate(0deg);
@@ -20,7 +23,7 @@ const SpinningVinyl = styled.img`
 
 const LinkCont = styled.a`
   text-decoration: none;
-  color: black;
+  color: ${props => props.color};
 `;
 
 
@@ -28,11 +31,19 @@ export default class ConnectWithMe extends React.Component {
   render () {
     return (
     	<div>
-        <h2> 
-          <LinkCont href="mailto:smurch@umich.edu" target="_blank"> smurch@umich.edu </LinkCont>
-          <br/>
-          <LinkCont href="https://www.linkedin.com/in/shashank-murching" target="_blank"> LinkedIn </LinkCont>
+
+      <Button secondary flat style={{margin: "10px"}}>
+        <h2>
+          <LinkCont color={Colors.secondary} href="mailto:smurch@umich.edu" target="_blank"> smurch@umich.edu </LinkCont>
         </h2>
+      </Button>
+      <br/>
+      <Button secondary flat style={{margin: "10px"}}>
+        <h2>
+          <LinkCont color={Colors.secondary}href="https://www.linkedin.com/in/shashank-murching" target="_blank"> LinkedIn </LinkCont>
+        </h2>
+      </Button>
+
         
         <div> [Add Spotify]</div>
 

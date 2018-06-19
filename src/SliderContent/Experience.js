@@ -45,7 +45,7 @@ function ExperienceContent(props) {
         <h4> <i> {props.location} </i></h4>
       </TitleCont>
       <Description>
-        <h4> {props.title} </h4>
+        <h4> <b> {props.title} </b> </h4>
         <p>
           [add content]
         </p>
@@ -89,7 +89,7 @@ export default class Experience extends React.Component {
         <ExperienceContent 
           name="Kappa Theta Pi" 
           date="Sept 2017-Current" 
-          title="Brother"
+          title="Website and Professional Development Committee"
           location="University of Michigan"/>
 
 	    </ContentContainer>
