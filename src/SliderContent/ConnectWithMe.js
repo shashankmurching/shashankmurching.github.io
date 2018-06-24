@@ -48,7 +48,6 @@ export default class ConnectWithMe extends React.Component {
         <div> [Add Spotify]</div>
 
          <SpinningVinyl src={vinyl} alt="spinning vinyl"/>
-
 	    </div>
     );
   }

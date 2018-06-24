@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Me from '../Assets/Images/Me.jpg';
+import SpotifyContent from './SpotifyContent';
 
 
 const ImageCont = styled.img`
@@ -25,9 +26,8 @@ export default class AboutMe extends React.Component {
 
 	techInterests() {
 		const tech_interests = ["Web Development", "IoT Devices", "Open Source"];
-		const listInterests = tech_interests.map((interest) =>
-			<li>{interest}</li>);
-
+		const listInterests = tech_interests.map((interest, id) =>
+			<li key={id}>{interest}</li>);
 
 		return <InterestsList> 
 						{listInterests}
@@ -36,8 +36,8 @@ export default class AboutMe extends React.Component {
 
 	otherInterests() {
 		const other_interests = ["Music", "Coffee Shops", "Animal Fun Facts"];
-		const listInterests = other_interests.map((interest) =>
-			<li>{interest}</li>);
+		const listInterests = other_interests.map((interest, id) =>
+			<li key={id}>{interest}</li>);
 
 		return <InterestsList> 
 						{listInterests}
@@ -58,6 +58,7 @@ export default class AboutMe extends React.Component {
 					{this.techInterests()}
 					<h2> Non-Tech Interests </h2>
 					{this.otherInterests()}
+					<SpotifyContent />
 				</div>
 			</div>
     );

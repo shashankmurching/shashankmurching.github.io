@@ -56,15 +56,7 @@ function ExperienceContent(props) {
 
 
 export default class Experience extends React.Component {
-  QuickenLoans2017() {
-    return "";
-  }
-
-
-
   render () {
-    var firstInternship = this.QuickenLoans2017();
-
 
     return (
     	<ContentContainer>
