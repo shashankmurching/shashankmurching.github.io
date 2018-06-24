@@ -25,15 +25,15 @@ export default class SlideSelector extends React.Component {
 		return name === this.state.buttons[this.props.selectedID];
 	}
 
- 	render () {
-  	return (
-      <SelectorCont>
-        {this.state.buttons.map((name, id) => ( <span key={id}>&nbsp;&nbsp;
-        	<Button secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
-           	{name} 
-        	</Button>&nbsp;&nbsp;</span>
-        ))} 
-      </SelectorCont>
-  	);
-  }
+	render () {
+		return (
+			<SelectorCont>
+				{this.state.buttons.map((name, id) => ( <span key={id}>&nbsp;&nbsp;
+				<Button secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
+					{name} 
+				</Button>&nbsp;&nbsp;</span>
+			))} 
+			</SelectorCont>
+		);
+	}
 }

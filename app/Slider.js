@@ -6,12 +6,12 @@ import { SlideTitles, SlideContent, Colors } from './Const';
 const ContentContainer = styled.div`
 	margin-top: 10px;
 	margin-bottom: 10px;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
 `;
 const HeaderType = styled.h1`
 	color: ${props => props.color};
@@ -42,12 +42,12 @@ export default class Slider extends React.Component {
 					</ContentContainer> </div>;
 	}
 
-  render () {
-    return (
-    	<div>
-    		<SlideSelector selectedID={this.state.selectedID} onButtonSelect={this.handleButtonChange} slides={SlideTitles} />
-    	  {this.contentSelector()}
-	    </div>
-    );
-  }
+	render () {
+		return (
+			<div>
+				<SlideSelector selectedID={this.state.selectedID} onButtonSelect={this.handleButtonChange} slides={SlideTitles} />
+				{this.contentSelector()}
+			</div>
+		);
+	}
 }

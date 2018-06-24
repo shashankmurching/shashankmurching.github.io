@@ -40,8 +40,8 @@ function ExperienceContent(props) {
   return (
     <ExpContentCont color={Colors.light_secondary}>
       <TitleCont>
-        <h2 style={{"margin": "0px"}}> {props.name} </h2>
-        <h4 style={{"margin": "0px"}}> {props.date} </h4>
+        <h2 style={{'margin': '0px'}}> {props.name} </h2>
+        <h4 style={{'margin': '0px'}}> {props.date} </h4>
         <h4> <i> {props.location} </i></h4>
       </TitleCont>
       <Description>
@@ -59,7 +59,7 @@ export default class Experience extends React.Component {
   render () {
 
     return (
-    	<ContentContainer>
+      <ContentContainer>
         <ExperienceContent 
           name="Quicken Loans" 
           date="Summer 2017" 
@@ -84,7 +84,7 @@ export default class Experience extends React.Component {
           title="Website and Professional Development Committee"
           location="University of Michigan"/>
 
-	    </ContentContainer>
+      </ContentContainer>
     );
   }
 }

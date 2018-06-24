@@ -9,8 +9,8 @@ export const SlideTitles = ['About Me', 'Experience', 'Projects', 'Resume', 'Con
 export const SlideContent = [<AboutMe/>, <Experience/>, <Projects/>, <Resume/>, <ConnectWithMe/>];
 
 export const Colors = {
-	primary: "#009688",
-	light_primary: "#b2dfdb",
-	secondary: "#7c4dff",
-	light_secondary: "#d1c4e9"
+	primary: '#009688',
+	light_primary: '#b2dfdb',
+	secondary: '#7c4dff',
+	light_secondary: '#d1c4e9'
 }

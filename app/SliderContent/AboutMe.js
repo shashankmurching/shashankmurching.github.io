@@ -25,17 +25,17 @@ const InterestsList = styled.ul`
 export default class AboutMe extends React.Component {
 
 	techInterests() {
-		const tech_interests = ["Web Development", "IoT Devices", "Open Source"];
+		const tech_interests = ['Web Development', 'IoT Devices', 'Open Source'];
 		const listInterests = tech_interests.map((interest, id) =>
 			<li key={id}>{interest}</li>);
 
 		return <InterestsList> 
-						{listInterests}
-					</InterestsList>;
+					{listInterests}
+				</InterestsList>;
 	}
 
 	otherInterests() {
-		const other_interests = ["Music", "Coffee Shops", "Animal Fun Facts"];
+		const other_interests = ['Music', 'Coffee Shops', 'Animal Fun Facts'];
 		const listInterests = other_interests.map((interest, id) =>
 			<li key={id}>{interest}</li>);
 
@@ -44,23 +44,23 @@ export default class AboutMe extends React.Component {
 					</InterestsList>;
 	}
 
-  render () {
-    return (
-    	<div justify-content="center" align-items="center" width="100%" >
-    		<WelcomeIntro>
+	render () {
+		return (
+			<div justify-content='center' align-items='center' width='100%' >
+				<WelcomeIntro>
 					I'm a Junior at the University of Michigan 
 					- majoring in Computer Science
 					and minoring in Mathematics.
-    		</WelcomeIntro>
-				<div>
-					<ImageCont src={Me}/>
-					<h2> Interests </h2>
-					{this.techInterests()}
-					<h2> Non-Tech Interests </h2>
-					{this.otherInterests()}
-					<SpotifyContent />
-				</div>
+				</WelcomeIntro>
+					<div>
+						<ImageCont src={Me}/>
+						<h2> Interests </h2>
+						{this.techInterests()}
+						<h2> Non-Tech Interests </h2>
+						{this.otherInterests()}
+						<SpotifyContent />
+					</div>
 			</div>
-    );
-  }
+		);
+	}
 }
