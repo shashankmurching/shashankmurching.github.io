@@ -139,7 +139,7 @@ let buildConfig = {
         contentBase: './build',
         proxy: {
             '/api': {
-                target: 'http://localhost:3000',
+                target: 'http://localhost:9090',
                 xfwd: true,
                 changeOrigin: true
             }
