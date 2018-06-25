@@ -1,0 +1,21 @@
+version: '2'
+services:
+  shashank_nginx:
+    extends:
+      file: docker-compose.yml
+      service: shashank_nginx
+    labels:
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.docker_gen"
+  shashank_website:
+    extends:
+      file: docker-compose.yml
+      service: shashank_website
+    env_file:
+      - production.env
+  shashank_nginx_letsencrypt:
+    extends:
+      file: docker-compose.yml
+      service: shashank_nginx_letsencrypt
+    volumes_from:
+        - "shashank_nginx"

@@ -2,13 +2,13 @@ import React from 'react';
 import {Button} from 'react-md';
 import styled from 'styled-components';
 
-
 const SelectorCont = styled.div`
-	padding-bottom: 15px;
+	padding-bottom: 20px;
+	padding-top: 10px;
 `;
 
 
-class SlideSelector extends React.Component {
+export default class SlideSelector extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -25,17 +25,15 @@ class SlideSelector extends React.Component {
 		return name === this.state.buttons[this.props.selectedID];
 	}
 
- 	render () {
-  	return (
-      <SelectorCont>
-        {this.state.buttons.map((name, id) => (
-          <Button key={id} secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
-           	{name} 
-         	</Button>
-        ))} 
-      </SelectorCont>
-  	);
-  }
+	render () {
+		return (
+			<SelectorCont>
+				{this.state.buttons.map((name, id) => ( <span key={id}>&nbsp;&nbsp;
+				<Button secondary raised={this.toggled(name)} flat={!this.toggled(name)} onClick={()=>this.handleClick(id)}> 
+					{name} 
+				</Button>&nbsp;&nbsp;</span>
+			))} 
+			</SelectorCont>
+		);
+	}
 }
-
-export default SlideSelector;
