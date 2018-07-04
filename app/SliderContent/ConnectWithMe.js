@@ -30,6 +30,8 @@ export default class ConnectWithMe extends React.Component {
 	render () {
 		return (
 			<div>
+				<Button flat secondary> Flat secondary </Button>
+				<Button flat primary> Flat Primary </Button>
 				<Button secondary flat style={{margin: '10px'}}>
 					<h2>
 						<LinkCont color={Colors.secondary} href="mailto:smurch@umich.edu" target='_blank'> smurch@umich.edu </LinkCont>
