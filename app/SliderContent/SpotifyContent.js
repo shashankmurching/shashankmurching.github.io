@@ -13,7 +13,15 @@ export default class SpotifyContent extends React.Component {
 
 
 	getArtists() {
-		fetch('/api/my-top-artists/')
+		fetch('/api/my-top-artists/', {
+			method: 'GET',
+			headers: new Headers(
+				{
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				}),
+			mode: 'no-cors'
+		})
 		.then(response => response.json())
 		.then(responseJSON => console.log(responseJSON)) 
 		.catch(err => {
