@@ -8,6 +8,17 @@ export default class SpotifyContent extends React.Component {
 		this.state = {
 			artists: []
 		}
+		this.getArtists();
+	}
+
+
+	getArtists() {
+		fetch('/api/my-top-artists/')
+		.then(response => response.json())
+		.then(responseJSON => console.log(responseJSON)) 
+		.catch(err => {
+			console.log(err);
+		})
 	}
 
 

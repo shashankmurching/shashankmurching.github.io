@@ -5,19 +5,18 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var path = require('path');
-var config = require('./config/default.js');
 const fetch = require('node-fetch');
-const app = express()
+//const app = express()
 
 var router = require('express').Router()
 
-//router.use(cors())
-  //    .use(cookieParser());
+router.use(cors())
+      .use(cookieParser());
 
-//var staticPath = path.join(__dirname, '/');
-app.use(express.static(__dirname + '/public'))
-   .use(cors())
-   .use(cookieParser());
+// //var staticPath = path.join(__dirname, '/');
+// app.use(cors())
+//     .use(cookieParser())
+//     //.use(express.static(staticPath));
 
 const spotifyAPIBaseUri = process.env['SPOTIFY_API_BASE_URI'];
 const spotifyAccountsBaseUri = process.env['SPOTIFY_ACCOUNT_BASE_URI'];
@@ -77,9 +76,7 @@ const getTopArtists = () => {
     json: true
   });
 }
-
-
-app.get('/my-top-artists', requestAuthorizationCode, function (req, res) {
+router.get('/my-top-artists', requestAuthorizationCode, function (req, res) {
     getTopArtists()
       .then((topArtistsResponse) => topArtistsResponse.json())
       .then((topArtistsResponseJSON) => {
@@ -107,7 +104,7 @@ app.get('/my-top-artists', requestAuthorizationCode, function (req, res) {
       })
   });
 
-app.get('/callback', function(req, res) {
+router.get('/callback', function(req, res) {
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
@@ -134,6 +131,7 @@ app.get('/callback', function(req, res) {
     };
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
+        //refreshToken = body.refresh_token;
         process.env['SPOTIFY_REFRESH_TOKEN'] = refreshToken;
         accessToken = body.access_token;
         res.redirect('/my-top-artists');
@@ -147,11 +145,18 @@ app.get('/callback', function(req, res) {
   }
 });
 
-app.get('/', function (req, res) {
-  res.status(200).send('You have hit the api backend');
-});
+module.exports = router;
 
-app.set('port', process.env.PORT || 3000);
+/*
+  app.listen(3000)
+  app.set('port', process.env.PORT || 3000);
 
-module.exports = app;
+  var server = app.listen(app.get('port'), function() {
+      console.log('listening');
+  });
+*/
+
+// modules.export = {
+//   getTopArtists
+// }
 

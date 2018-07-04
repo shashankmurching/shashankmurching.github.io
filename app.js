@@ -17,11 +17,24 @@ process.on('rejectionHandled', rejection => {
 var config = require('./config/default.js');
 
 var http = require('http'),
+    cors = require('cors'),
     express = require('express'),
     app = express(),
+    cookieParser = require('cookie-parser'),
     server = http.createServer(app),
     csrf = require('csurf'),
     csrfProtection = csrf(); // eslint-disable-line
+
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+}
+
+app.use(cors({origin: 'http://localhost:3000'}))
+    .use('*', allowCrossDomain);
+//app.use(cors({origin: 'http://localhost:3000'}));
 
 // Disable x-powered-by
 app.disable('x-powered-by');
@@ -31,9 +44,11 @@ app.use(function(req, res, next) {
     if (req.csrfToken) {
         res.cookie('xsrf-token', req.csrfToken());
     }
-
     return next();
 });
+
+var spotifyRoute = require('./server.js');
+app.use('/api', spotifyRoute);
 
 // Intiialize development webpack (hot reloading, etc);
 if (app.get('env') !== 'production' && !config.api_work) {
@@ -62,11 +77,14 @@ if (app.get('env') !== 'production' && !config.api_work) {
     app.use(express.static('static'));
 } else {
     // Static files middleware
-		app.use(express.static('static'));
+	app.use(express.static('static'));
     app.use(express.static('build'));
-
     app.use(function(req, res) {
         res.sendFile(__dirname + '/build/index.html');
+    });
+
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
 }
 
