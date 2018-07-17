@@ -25,6 +25,7 @@ var http = require('http'),
     csrf = require('csurf'),
     csrfProtection = csrf(); // eslint-disable-line
 
+
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -32,8 +33,9 @@ var allowCrossDomain = function(req, res, next) {
     next();
 }
 
-app.use(cors({origin: 'http://localhost:3000'}))
-    .use('*', allowCrossDomain);
+
+// app.use(cors({origin: 'http://localhost:3000'}))
+//     .use('*', allowCrossDomain);
 //app.use(cors({origin: 'http://localhost:3000'}));
 
 // Disable x-powered-by

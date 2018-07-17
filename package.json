@@ -3,6 +3,7 @@
   "homepage": "https://shashankmurching.com/",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000/",
   "dependencies": {
     "archiver": "^2.0.0",
     "autoprefixer": "^6.7.7",
@@ -57,6 +58,7 @@
     "react-load-script": "0.0.6",
     "react-md": "^1.4.1",
     "react-measure": "^1.4.6",
+    "react-pdf": "^3.0.5",
     "react-vimeo": "^2.0.0",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.4",
