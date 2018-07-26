@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/app/Assets
+/app/Assets/Styles
 
 # testing
 /coverage

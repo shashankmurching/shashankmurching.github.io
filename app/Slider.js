@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import SlideSelector from './SlideSelector';
-import { SlideTitles, SlideContent, Colors } from './Const';
+import {Button} from 'react-md';
+import { SlideTitles, ButtonLinks } from './Const';
+import AboutMe from './SliderContent/AboutMe';
 
 const ContentContainer = styled.div`
 	margin-top: 10px;
@@ -13,9 +14,10 @@ const ContentContainer = styled.div`
 	align-items: center;
 	color: black;
 `;
-const HeaderType = styled.h1`
-	color: ${props => props.color};
-	align-items: center;
+
+const SelectorCont = styled.div`
+	padding-bottom: 20px;
+	padding-top: 10px;
 `;
 
 export default class Slider extends React.Component {
@@ -24,29 +26,17 @@ export default class Slider extends React.Component {
 		this.state = {
 			selectedID: 0
 		};
-		this.handleButtonChange = this.handleButtonChange.bind(this);
 	}
-
-	handleButtonChange(id) {
-		this.setState({
-			selectedID: id
-		});
-		//console.log(id);
-	}
-
-	contentSelector() {
-		return <div>
-					<HeaderType color={Colors.primary}> {SlideTitles[this.state.selectedID]} </HeaderType>
-					<ContentContainer> 	
-						{SlideContent[this.state.selectedID]} 
-					</ContentContainer> </div>;
-	}
-
 	render () {
 		return (
 			<div>
-				<SlideSelector selectedID={this.state.selectedID} onButtonSelect={this.handleButtonChange} slides={SlideTitles} />
-				{this.contentSelector()}
+				<SelectorCont>
+					{SlideTitles.map((name, id) => ( <span key={id}>&nbsp;&nbsp;
+						<Button secondary flat target="_" href={ButtonLinks[id]}> 
+							{name} 
+						</Button>&nbsp;&nbsp; </span>))}
+				</SelectorCont>
+				<ContentContainer> <AboutMe /> </ContentContainer>
 			</div>
 		);
 	}

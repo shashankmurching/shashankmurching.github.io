@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Me from '../Assets/Images/Me.jpg';
-import SpotifyContent from './SpotifyContent';
+//import SpotifyContent from './SpotifyContent';
 
 
 const ImageCont = styled.img`
@@ -21,8 +21,39 @@ const InterestsList = styled.ul`
   font-size: medium;
 `;
 
+const AboutMeCont = styled.div`
+	justify-content: center;
+	align-items: center;
+`;
+
+
+// const RandomDog = styled.img`
+// 	maxWidth: 300px;
+// 	maxHeight: 350px;
+// `;
+
 
 export default class AboutMe extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			dogUrl: ''
+		}
+	}
+
+	componentDidMount() {
+		fetch('https://dog.ceo/api/breeds/image/random')
+			.then(response => {
+				if (response.status >= 400) {
+					throw new Error('Bad server response');
+				}
+				return response.json();
+			}).then(responseJSON => {
+				this.setState({dogUrl: responseJSON['message']});
+				console.log(this.state.dogUrl);
+			})
+	}
+
 
 	techInterests() {
 		const tech_interests = ['Web Development', 'IoT Devices', 'Open Source'];
@@ -46,7 +77,7 @@ export default class AboutMe extends React.Component {
 
 	render () {
 		return (
-			<div justify-content='center' align-items='center' width='100%' >
+			<AboutMeCont>
 				<WelcomeIntro>
 					I'm a Junior at the University of Michigan 
 					- majoring in Computer Science
@@ -58,9 +89,8 @@ export default class AboutMe extends React.Component {
 						{this.techInterests()}
 						<h2> Non-Tech Interests </h2>
 						{this.otherInterests()}
-						<SpotifyContent />
 					</div>
-			</div>
+			</AboutMeCont>
 		);
 	}
 }

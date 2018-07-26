@@ -1,18 +1,15 @@
 import React from 'react';
 
-
-
 export default class SpotifyContent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			artists: []
 		}
-		this.getArtists();
+		//this.getArtists();
 	}
 
-
-	getArtists() {
+	componentDidMount() {
 		fetch('/api/my-top-artists/', {
 			method: 'GET',
 			headers: new Headers(
@@ -23,12 +20,10 @@ export default class SpotifyContent extends React.Component {
 			mode: 'no-cors'
 		})
 		.then(response => response.json())
-		.then(responseJSON => console.log(responseJSON)) 
-		.catch(err => {
-			console.log(err);
-		})
+		.then(responseJSON => {
+			this.state.artists = responseJSON;
+		}).catch(err => console.log('Error caught: ' + err.message))
 	}
-
 
 	render() {
 		return (
@@ -40,9 +35,7 @@ export default class SpotifyContent extends React.Component {
 			</div>
 		);
 	}
-	
 }
-
 
 const ArtistCont = ({artistName, imageUrl, artistPage}) => {
 	if (artistName === undefined || imageUrl === undefined || artistPage === undefined)
