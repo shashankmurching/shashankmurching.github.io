@@ -1,6 +1,6 @@
 export const SlideTitles = ['Projects', 'Resume', 'LinkedIn', 'Email'];
 export const ButtonLinks = ['https://github.com/shashankmurching', 
-							'https://drive.google.com/file/d/0B3MQN9Z8edmWbE5oa3p6dHkxSVE/view?usp=sharing',
+							'https://drive.google.com/open?id=0BykdE61ta3-BRDN3dE4ydmpSQm8',
 							'https://www.linkedin.com/in/shashank-murching/',
 							'mailto:smurch@umich.edu'];
 

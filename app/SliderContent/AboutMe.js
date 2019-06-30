@@ -27,12 +27,6 @@ const AboutMeCont = styled.div`
 `;
 
 
-// const RandomDog = styled.img`
-// 	maxWidth: 300px;
-// 	maxHeight: 350px;
-// `;
-
-
 export default class AboutMe extends React.Component {
 	constructor(props) {
 		super(props);
@@ -42,7 +36,7 @@ export default class AboutMe extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch('https://dog.ceo/api/breeds/image/random')
+		/*fetch('https://dog.ceo/api/breeds/image/random')
 			.then(response => {
 				if (response.status >= 400) {
 					throw new Error('Bad server response');
@@ -52,11 +46,13 @@ export default class AboutMe extends React.Component {
 				this.setState({dogUrl: responseJSON['message']});
 				console.log(this.state.dogUrl);
 			})
+		*/
+		console.log('Mounted component.')
 	}
 
 
 	techInterests() {
-		const tech_interests = ['Web Development', 'IoT Devices', 'Open Source'];
+		const tech_interests = ['Web Development', 'Machine Learning', 'Open Source'];
 		const listInterests = tech_interests.map((interest, id) =>
 			<li key={id}>{interest}</li>);
 
@@ -71,15 +67,15 @@ export default class AboutMe extends React.Component {
 			<li key={id}>{interest}</li>);
 
 		return <InterestsList> 
-						{listInterests}
-					</InterestsList>;
+					{listInterests}
+				</InterestsList>;
 	}
 
 	render () {
 		return (
 			<AboutMeCont>
 				<WelcomeIntro>
-					I'm a Junior at the University of Michigan 
+					I'm a rising Senior at the University of Michigan 
 					- majoring in Computer Science
 					and minoring in Mathematics.
 				</WelcomeIntro>
