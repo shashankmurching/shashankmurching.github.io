@@ -26,6 +26,7 @@ const clientSecret = process.env['SPOTIFY_CLIENT_SECRET']
 const refreshToken = process.env['SPOTIFY_REFRESH_TOKEN'];
 const redirectUri = process.env['SPOTIFY_REDIRECT_URI'];
 
+let expires_in = '';
 let authorizationCode = process.env['SPOTIFY_AUTHORIZATION_TOKEN'] || '';
 let accessToken = '';
 var stateKey = 'spotify_auth_state';
@@ -53,7 +54,7 @@ function requestAuthorizationCode(req, res, next) {
         state: state
       }));
   } else {
-    next();
+    return next();
   }
 }
 
