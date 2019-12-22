@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Me from '../Assets/Images/Me2.jpg';
+// import { SpotifyAccount } from '../Const';
 //import SpotifyContent from './SpotifyContent';
 
 
