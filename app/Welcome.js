@@ -13,7 +13,7 @@ export default class Welcome extends React.Component {
 	render () {
 	return (
 			<div>
-				<WelcomeHeader color={Colors.primary}> Shashank Murching </WelcomeHeader>
+				<WelcomeHeader color={Colors.primary}>Shashank Murching</WelcomeHeader>
 			</div>
 		);
 	}

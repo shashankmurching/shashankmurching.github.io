@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Me from '../Assets/Images/Me.jpg';
+import Me from '../Assets/Images/Me2.jpg';
 //import SpotifyContent from './SpotifyContent';
 
 
 const ImageCont = styled.img`
 	float: left;
 	padding-right: 40px;
-	height: 700px;
+	height: 600px;
 `;
 
 const WelcomeIntro = styled.h2`
@@ -52,7 +52,7 @@ export default class AboutMe extends React.Component {
 
 
 	techInterests() {
-		const tech_interests = ['Web Development', 'Machine Learning', 'Open Source'];
+		const tech_interests = ['Web Development', 'Distributed Systems', 'Open Source'];
 		const listInterests = tech_interests.map((interest, id) =>
 			<li key={id}>{interest}</li>);
 
@@ -75,9 +75,8 @@ export default class AboutMe extends React.Component {
 		return (
 			<AboutMeCont>
 				<WelcomeIntro>
-					I'm a rising Senior at the University of Michigan 
-					- majoring in Computer Science
-					and minoring in Mathematics.
+					I'm a Senior at the University of Michigan 
+					- majoring in Computer Science.
 				</WelcomeIntro>
 					<div>
 						<ImageCont src={Me}/>
