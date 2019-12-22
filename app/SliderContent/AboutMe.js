@@ -4,10 +4,16 @@ import Me from '../Assets/Images/Me2.jpg';
 //import SpotifyContent from './SpotifyContent';
 
 
-const ImageCont = styled.img`
-	float: left;
+const Image = styled.img`
+	height: 580px;
+    display: block;
+    margin: 0 auto;	
+`;
+
+const ImageCont = styled.div`
 	padding-right: 40px;
-	height: 600px;
+	float: left;
+    text-align: justify;	
 `;
 
 const WelcomeIntro = styled.h2`
@@ -79,7 +85,10 @@ export default class AboutMe extends React.Component {
 					- majoring in Computer Science.
 				</WelcomeIntro>
 					<div>
-						<ImageCont src={Me}/>
+						<ImageCont>
+							<Image src={Me}/>
+							pc: Gabi de Coster
+						</ImageCont>
 						<h2> Interests </h2>
 						{this.techInterests()}
 						<h2> Non-Tech Interests </h2>
