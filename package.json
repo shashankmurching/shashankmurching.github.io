@@ -39,7 +39,7 @@
     "html": "^1.0.0",
     "html-webpack-plugin": "^2.30.1",
     "immutable": "^3.8.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "mkdirp": "^0.5.1",
     "node-gyp": "^5.0.7",
     "node-ssh": "^4.2.2",
