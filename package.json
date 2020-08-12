@@ -64,7 +64,7 @@
     "react-vimeo": "^2.0.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.4",
-    "serialize-javascript": "2.1.1",
+    "serialize-javascript": "3.1.0",
     "style-loader": "^0.16.0",
     "styled-components": "^1.4.4",
     "validator": "^7.0.0",
