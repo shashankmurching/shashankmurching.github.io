@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  padding-top: 10px;
+  height: 100%;
+}
+
+.Header {
+    max-width: 100%;
+    display: block;
+}
+
+.HiddenLink {
+    text-decoration: none;
+    color: black;
+}

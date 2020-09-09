@@ -1,0 +1,36 @@
+.Home {
+    width: 60%;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.ContentContainer {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.ImageContainer {
+    text-align: justify;
+}
+
+.ProfilePicture {
+    max-height: 580px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.InterestsHeader {
+    height: 100%;
+
+}
+
+.ListInterests {
+    padding-bottom: 20px;
+
+}
