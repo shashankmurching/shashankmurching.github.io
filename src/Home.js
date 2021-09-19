@@ -40,7 +40,7 @@ export default function Home() {
           </Typography>
 
           <Typography variant="h5">
-            Burrito Guantlet
+            Burrito Bracket
           </Typography>
           <Typography className="ListInterests">
             Pancheros
