@@ -7,7 +7,7 @@ import * as Constants from './Const';
 export default function Home() {
   return (
     <div className="Home">
-      I&apos;m a software engineer at Microsoft and recently graduated from UofM. Go Blue!
+      I&apos;m a software engineer at Microsoft and graduated from UofM. Go Blue!
 
       <div className="ContentContainer">
         <div className="ImageContainer">
@@ -33,23 +33,21 @@ export default function Home() {
             Coffee Shops
             <br />
             <a className="HiddenLink" target="_" href={Constants.SPOTIFY_ACCOUNT_URL}>
-              Music
+              <b>Music</b>
             </a>
             <br />
-            Animal Fun Facts
+            People Watching
           </Typography>
 
           <Typography variant="h5">
-            Burrito Bracket
+            Misc
           </Typography>
           <Typography className="ListInterests">
-            Pancheros
+            Movies
             <br />
-            Chipotle
+            Music Theory
             <br />
-            Qdoba
-            <br />
-            Btb
+            Food
           </Typography>
 
         </div>
